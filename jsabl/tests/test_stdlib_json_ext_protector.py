@@ -34,10 +34,13 @@ def test_protection():
         if isinstance(o, MyInt):
             return o
         else:
-            raise TypeError(f'Object of type {o.__class__.__name__} '
-                            f'is not JSON serializable')
+            # raise the default error message
+            JSONEncoder.default(None, o)
 
     encoder = JSONEncoder(default=custom_object_hook)
     add_protection_to_json_encoder(encoder)
 
     assert encoder.encode(i) == '12'
+
+    with pytest.raises(TypeError) as exc_info:
+        encoder.encode(object())
