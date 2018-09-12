@@ -2,7 +2,7 @@
 
 *Convert Python objects to JSON and back.*
 
-[![Build Status](https://travis-ci.org/python-jsabl/jsabl.svg?branch=master)](https://travis-ci.org/python-jsabl/jsabl) [![Tests Status](https://python-jsabl.github.io/jsabl/junit/junit-badge.svg?dummy=8484744)](https://python-jsabl.github.io/jsabl/junit/report.html) [![codecov](https://codecov.io/gh/python-jsabl/jsabl/branch/master/graph/badge.svg)](https://codecov.io/gh/python-jsabl/jsabl) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://python-jsabl.github.io/jsabl/) [![PyPI](https://img.shields.io/badge/PyPI-yamlable-blue.svg)](https://pypi.python.org/pypi/yamlable/)
+[![Build Status](https://travis-ci.org/python-jsabl/jsabl.svg?branch=master)](https://travis-ci.org/python-jsabl/jsabl) [![Tests Status](https://python-jsabl.github.io/jsabl/junit/junit-badge.svg?dummy=8484744)](https://python-jsabl.github.io/jsabl/junit/report.html) [![codecov](https://codecov.io/gh/python-jsabl/jsabl/branch/master/graph/badge.svg)](https://codecov.io/gh/python-jsabl/jsabl) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://python-jsabl.github.io/jsabl/) [![PyPI](https://img.shields.io/badge/PyPI-jsabl-blue.svg)](https://pypi.python.org/pypi/yamlable/)
 
 **This is the readme for developers.** The documentation for users is available here: [https://python-jsabl.github.io/jsabl/](https://python-jsabl.github.io/jsabl/)
 
@@ -17,7 +17,7 @@ Here is a non-exhaustive list of interesting open topics: [https://github.com/py
 This project uses `pytest`.
 
 ```bash
-pytest -v yamlable/tests/
+pytest -v jsabl/tests/
 ```
 
 You may need to install requirements for setup beforehand, using 
@@ -61,7 +61,7 @@ pip install -r ci_tools/requirements-doc.txt
 The following commands generate the html test report and the associated badge. 
 
 ```bash
-pytest --junitxml=junit.xml -v yamlable/tests/
+pytest --junitxml=junit.xml -v jsabl/tests/
 ant -f ci_tools/generate-junit-html.xml
 python ci_tools/generate-junit-badge.py
 ```
