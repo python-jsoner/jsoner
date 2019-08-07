@@ -11,4 +11,4 @@ cleanup() {
 }
 
 trap "cleanup" INT TERM EXIT
-pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html --cov-report term-missing --cov=./jsabl -v jsabl/tests/
+pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html --cov-report term-missing --cov=./jsoner -v jsoner/tests/

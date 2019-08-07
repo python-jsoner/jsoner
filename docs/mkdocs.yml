@@ -1,6 +1,6 @@
-site_name: jsabl
+site_name: jsoner
 # site_description: 'A short description of my project'
-repo_url: https://github.com/python-jsabl/jsabl
+repo_url: https://github.com/python-jsoner/jsoner
 pages:
     - Home: index.md
 #    - Usage details: usage.md

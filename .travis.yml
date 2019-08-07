@@ -23,7 +23,7 @@ python:
 
 env:
   global:
-  - GH_REF: git@github.com:python-jsabl/jsabl.git
+  - GH_REF: git@github.com:python-jsoner/jsoner.git
 
 before_install:
   - sudo apt-get install pandoc
@@ -41,10 +41,10 @@ install:
 script:
 #  - coverage run tests.py
   - pip install .
-  - python -c "import os; os.chdir('..'); import jsabl"
+  - python -c "import os; os.chdir('..'); import jsoner"
 # ***tests***
 #  - coverage run tests.py
-#  - pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html --cov-report term-missing --cov=./jsabl -v jsabl/tests/
+#  - pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html --cov-report term-missing --cov=./jsoner -v jsoner/tests/
 # now done in a dedicated script to capture exit code 1 and transform it to 0
   - chmod a+x ./ci_tools/run_tests.sh
   - sh ./ci_tools/run_tests.sh
@@ -55,7 +55,7 @@ after_success:
   - ant -f ci_tools/generate-junit-html.xml  # generates the html for the test results. Actually we dont use it anymore
   - python ci_tools/generate-junit-badge.py  # generates the badge for the test results
   - codecov
-  - pylint jsabl  # note that at the moment the report is simply lost, we dont transform the result into anything
+  - pylint jsoner  # note that at the moment the report is simply lost, we dont transform the result into anything
 # ***documentation***
   - mkdocs build -f docs/mkdocs.yml
   - mv reports/junit site/
@@ -74,7 +74,7 @@ after_success:
       git fetch gh-remote && git fetch gh-remote gh-pages:gh-pages;
       # push but only if this is not a build triggered by a pull request
       # note: here we use the --dirty flag so that mkdocs does not clean the additional reports that we copied in the site
-      if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_PYTHON_VERSION}" = "3.5" ]; then echo "Pushing to github"; PYTHONPATH=jsabl/ mkdocs gh-deploy -v --dirty -f docs/mkdocs.yml --remote-name gh-remote; git push gh-remote gh-pages; fi;
+      if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_PYTHON_VERSION}" = "3.5" ]; then echo "Pushing to github"; PYTHONPATH=jsoner/ mkdocs gh-deploy -v --dirty -f docs/mkdocs.yml --remote-name gh-remote; git push gh-remote gh-pages; fi;
     else
       echo "File 'ci_tools/github_travis_rsa' has not been created, please check your encrypted repo token in .travis.yml, on the line starting with 'openssl aes-256-cbc...'"
     fi

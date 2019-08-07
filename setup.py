@@ -27,12 +27,12 @@ except Exception as e:
                          'them manually using conda or other system. The list is : ' + str(SETUP_REQUIRES)), e)
 
 # ************** ID card *****************
-DISTNAME = 'jsabl'
+DISTNAME = 'jsoner'
 DESCRIPTION = "A thin wrapper of Python stdlib's json module to convert objects to JSON and back, with the purpose " \
               "of maintaining readability of objects serialized with old versions of their class definition."
 MAINTAINER = 'Sylvain Marié'
 MAINTAINER_EMAIL = 'sylvain.marie@schneider-electric.com'
-URL = 'https://github.com/python-jsabl/jsabl'
+URL = 'https://github.com/python-jsoner/jsoner'
 LICENSE = 'BSD 3-Clause'
 LICENSE_LONG = 'License :: OSI Approved :: BSD License'
 

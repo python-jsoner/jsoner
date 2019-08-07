@@ -1,23 +1,23 @@
-# jsabl
+# jsoner
 
 *Convert Python objects to JSON and back.*
 
-[![Build Status](https://travis-ci.org/python-jsabl/jsabl.svg?branch=master)](https://travis-ci.org/python-jsabl/jsabl) [![Tests Status](https://python-jsabl.github.io/jsabl/junit/junit-badge.svg?dummy=8484744)](https://python-jsabl.github.io/jsabl/junit/report.html) [![codecov](https://codecov.io/gh/python-jsabl/jsabl/branch/master/graph/badge.svg)](https://codecov.io/gh/python-jsabl/jsabl) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://python-jsabl.github.io/jsabl/) [![PyPI](https://img.shields.io/badge/PyPI-jsabl-blue.svg)](https://pypi.python.org/pypi/yamlable/)
+[![Build Status](https://travis-ci.org/python-jsoner/jsoner.svg?branch=master)](https://travis-ci.org/python-jsoner/jsoner) [![Tests Status](https://python-jsoner.github.io/jsoner/junit/junit-badge.svg?dummy=8484744)](https://python-jsoner.github.io/jsoner/junit/report.html) [![codecov](https://codecov.io/gh/python-jsoner/jsoner/branch/master/graph/badge.svg)](https://codecov.io/gh/python-jsoner/jsoner) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://python-jsoner.github.io/jsoner/) [![PyPI](https://img.shields.io/badge/PyPI-jsoner-blue.svg)](https://pypi.python.org/pypi/yamlable/)
 
-**This is the readme for developers.** The documentation for users is available here: [https://python-jsabl.github.io/jsabl/](https://python-jsabl.github.io/jsabl/)
+**This is the readme for developers.** The documentation for users is available here: [https://python-jsoner.github.io/jsoner/](https://python-jsoner.github.io/jsoner/)
 
 ## Want to contribute ?
 
 Contributions are welcome ! Simply fork this project on github, commit your contributions, and create pull requests.
 
-Here is a non-exhaustive list of interesting open topics: [https://github.com/python-jsabl/jsabl/issues](https://github.com/python-jsabl/jsabl/issues)
+Here is a non-exhaustive list of interesting open topics: [https://github.com/python-jsoner/jsoner/issues](https://github.com/python-jsoner/jsoner/issues)
 
 ## Running the tests
 
 This project uses `pytest`.
 
 ```bash
-pytest -v jsabl/tests/
+pytest -v jsoner/tests/
 ```
 
 You may need to install requirements for setup beforehand, using 
@@ -61,7 +61,7 @@ pip install -r ci_tools/requirements-doc.txt
 The following commands generate the html test report and the associated badge. 
 
 ```bash
-pytest --junitxml=junit.xml -v jsabl/tests/
+pytest --junitxml=junit.xml -v jsoner/tests/
 ant -f ci_tools/generate-junit-html.xml
 python ci_tools/generate-junit-badge.py
 ```
