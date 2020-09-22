@@ -11,4 +11,15 @@ cleanup() {
 }
 
 trap "cleanup" INT TERM EXIT
-pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html --cov-report term-missing --cov=./jsoner -v jsoner/tests/
+
+# First the raw for coverage
+echo -e "\n\n****** Running tests ******\n\n"
+if [ "${TRAVIS_PYTHON_VERSION}" = "3.5" ]; then
+   # full
+   coverage run --source jsoner -m pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html -v jsoner/tests/
+   # buggy
+   # python -m pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html --cov-report term-missing --cov=./jsoner -v jsoner/tests/
+else
+   # faster - skip coverage and html report
+   python -m pytest --junitxml=reports/junit/junit.xml -v jsoner/tests/
+fi

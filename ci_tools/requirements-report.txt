@@ -1,7 +1,7 @@
 # requirements needed to generate the reports
-pytest-html
+pytest-html==1.9.0  # otherwise requires pytest 5
 requests
 xunitparser
-pytest-cov
+#pytest-cov
 coverage
 pylint
